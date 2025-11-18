@@ -123,10 +123,10 @@ jobs:
           path: bin/*-package
           compression-level: 0
 
-      #- name: Delete tag
-       #run: gh release delete latest --cleanup-tag
-        #env:
-          #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Delete tag
+        run: gh release delete latest --cleanup-tag
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: upload_packages
         uses: svenstaro/upload-release-action@latest
